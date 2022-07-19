@@ -1,26 +1,4 @@
-from GoogleNews import GoogleNews
-news = GoogleNews(period='1d')
-news.search("India")
-result = news.result()
 
-import pandas as pd
-data = pd.DataFrame.from_dict(result)
-data = data.drop(columns=["img"])
-data.head()
-
-for i in result:
-
-    print("Title : ", i["title"])
-    print("News : ", i["desc"])
-    print("Read Full News : ", i["link"])
-
-import pywhatkit
-print(i["title"])
-print(i["desc"])
-
-pywhatkit.sendwhatmsg('+910000000000',i["link"], 16, 30)
-
----------------------------------------------------------------------------------------------------------------------------------------------------------
 from GoogleNews import GoogleNews
 news = GoogleNews(period='1d')
 news.search("India")
